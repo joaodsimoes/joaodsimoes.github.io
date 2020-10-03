@@ -50,7 +50,12 @@ thanks to an old Android phone my girlfriend had laying around and with the help
 
 						<h2>How it works</h2>
 							<p>The userscript pulls a base 64 encoded videoframe every 400ms and sends it to the server. <br>
-							Upon recieving a request, the server checks if the cameraID is already registered in the database, if it's not, it processes the frames and sets it as background.</p>
+							Upon recieving a request, the server checks if the cameraID is already registered in the database, if it's not, it processes the frame and sets it as background.
+							<br>If a background for the cameraID is already present in the database, the server pulls it and compares it to the current frame through Absolute Difference, 
+							if an object past a certain area threshold is detected, alarms are sounded, a picture with the intruder is saved to the filesystem and the server returns a 200 OK {Intruder: true} response.
+						
+						
+						</p>
 						</div>
 					</section>
 
